@@ -16,6 +16,9 @@ services:
       MYSQL_PASSWORD: admin
       MYSQL_ROOT_PASSWORD: secret
   php:
+    build:
+      context: .
+      dockerfile: php.dockerfile
     image: php:7.4-fpm-alpine
     volumes:
       - ./wordpress:/var/www/html:delegated
